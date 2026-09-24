@@ -1,0 +1,31 @@
+SITE ISAC — COMO USAR
+=====================
+
+CONTEÚDO
+  index.html    Página principal (cursos, diagnóstico gratuito, unidades, galeria, contactos)
+  portal.html   Protótipo do portal (aluno / formador / administração) com DADOS FICTÍCIOS
+  css/ js/ img/ Estilos, scripts e imagens (já optimizadas)
+
+VER NO COMPUTADOR
+  Faça duplo clique em index.html.
+
+PUBLICAR (sem custos, sem programar)
+  Netlify: entre em app.netlify.com/drop e arraste esta pasta descompactada.
+  Ou GitHub Pages, ou envie todos os ficheiros para o alojamento (cPanel) na pasta public_html.
+
+O QUE EDITAR
+  Textos: index.html (procure o texto e altere).
+  Contactos: procure 258865166752 e 258878816684 (links do WhatsApp) e os números escritos nos botões.
+  Cores: css/style.css, linha :root (--or laranja, --ac azul, --acd azul escuro).
+  Campanha "Curso do Sonho": bloco marcado com comentário em index.html. Apague-o quando terminar.
+
+CONFIRMAR COM A DIREÇÃO ANTES DE PUBLICAR
+  1. Números de contacto: um cartaz tinha 86 51 66 752 repetido; usei também 87 88 16 684 do outro cartaz.
+  2. Se a campanha "Curso do Sonho" ainda está activa.
+  3. Cursos, horários e preços (o site não inventa nenhum; pede informações por WhatsApp).
+  4. Autorização para usar as fotos dos alunos (podem incluir menores).
+  5. Ligações de mapa exactas de cada unidade (podem ser acrescentadas).
+
+PORTAL
+  É apenas uma demonstração: não guarda dados. Para uso real precisa de base de dados,
+  autenticação e revisão de segurança (ver conversa anterior).
