@@ -1,0 +1,74 @@
+SITE ISAC — COMO USAR
+=====================
+
+CONTEÚDO
+  index.html    Página principal (cursos, diagnóstico gratuito, unidades, galeria, contactos)
+  manifest.webmanifest, sw.js, offline.html, js/pwa.js   Tornam o site/portal numa APP instalável (PWA)
+  portal.html   Portal (aluno / formador / administração), ligado a uma base de dados Supabase (ver abaixo)
+  css/ js/ img/ Estilos, scripts e imagens (já optimizadas)
+  supabase/     Esquema da base de dados, guias e testes. USO INTERNO: não publicar.
+
+VER NO COMPUTADOR
+  Faça duplo clique em index.html.
+
+PUBLICAR (sem custos, sem programar)
+  Netlify: entre em app.netlify.com/drop e arraste uma pasta com SÓ estes itens: index.html, portal.html,
+  offline.html, manifest.webmanifest, sw.js, css/, js/ e img/. NÃO publique a pasta supabase/ nem este LEIA-ME (contêm o esquema da base de dados,
+  testes e a auditoria de segurança; são para uso interno).
+  Ou GitHub Pages, ou envie só esses mesmos itens para o alojamento (cPanel) na pasta public_html.
+
+O QUE EDITAR
+  Textos: index.html (procure o texto e altere).
+  Contactos: procure 258865166752 e 258878816684 (links do WhatsApp) e os números escritos nos botões.
+  Cores: css/style.css, linha :root (--or laranja, --ac azul, --acd azul escuro).
+  Campanha "Curso do Sonho": bloco marcado com comentário em index.html. Apague-o quando terminar.
+
+CONFIRMAR COM A DIREÇÃO ANTES DE PUBLICAR
+  1. Números de contacto: um cartaz tinha 86 51 66 752 repetido; usei também 87 88 16 684 do outro cartaz.
+  2. Se a campanha "Curso do Sonho" ainda está activa.
+  3. Cursos, horários e preços (o site não inventa nenhum; pede informações por WhatsApp).
+  4. Autorização para usar as fotos dos alunos (podem incluir menores).
+  5. Mapa: as 4 unidades abrem o Google Maps por pesquisa de nome. Para localização exacta, troque o texto depois de query= no index.html pelas coordenadas (ex.: query=-25.9123,32.4567).
+  6. Fotos de Electricidade: deixei de fora a foto com marca "CINEMATIC" (captura de vídeo)..
+
+PORTAL (agora funcional a sério)
+  O portal.html deixou de ser uma demonstração com dados fictícios: agora tem contas
+  reais, login, notas, faltas, matrículas e pagamentos, guardados numa base de dados
+  Supabase (gratuita para começar).
+
+  ANTES DE USAR: siga o supabase/GUIA.md (15 minutos, não precisa de programar) para:
+    1. Criar o projecto Supabase e carregar o supabase/schema.sql (um clique).
+    2. Preencher js/config.js com o URL e a chave do seu projecto.
+    3. Criar a primeira conta de Administração.
+  Sem esses passos, o portal.html mostra um aviso a dizer o que falta.
+
+  O que já está pronto:
+    - Contas com papéis (aluno / formador / administração), alunos começam inactivos
+      até a administração os activar.
+    - Formadores lançam notas (teste escrito 30% + oral 30% + teste final 40%) e faltas,
+      só nas suas turmas.
+    - Alunos veem só as suas notas, faltas e pagamentos.
+    - Administração: matricula alunos (gera taxa de matrícula + propinas automaticamente),
+      regista pagamentos com recibo, gere cursos/turmas/utilizadores e vê um registo de
+      auditoria de tudo o que foi alterado.
+  Regras a confirmar com a direcção: pesos da média e limite de faltas (topo do
+  js/portal.js), e preços dos cursos (ficam a zero até serem definidos em "Cursos e turmas").
+
+APP INSTALÁVEL (PWA)
+  O site e o portal podem ser instalados no telemóvel/computador como uma app (ícone ISAC, abre sem barra do navegador).
+  Requisito: o site tem de estar publicado em HTTPS (Netlify, GitHub Pages e a maioria dos alojamentos já dão HTTPS).
+  Não funciona a abrir o ficheiro com duplo clique (file://) nem em http:// simples.
+  COMO INSTALAR
+    Android (Chrome): abrir o portal -> botão "Instalar app" no topo, ou menu ⋮ -> "Instalar app".
+    iPhone (Safari): botão Partilhar -> "Adicionar ao ecrã principal". (O iPhone não mostra o botão "Instalar app".)
+    Computador (Chrome/Edge): ícone de instalar na barra de endereço.
+  O QUE FUNCIONA SEM INTERNET
+    Abre a página inicial e o ecrã do portal. NÃO mostra notas, pagamentos nem dados de contas sem internet:
+    esses dados nunca são guardados no telemóvel pela app (só os ficheiros do site: textos, estilos, imagens).
+  AO ALTERAR QUALQUER FICHEIRO DO SITE DEPOIS DE PUBLICAR
+    Abra sw.js e aumente o número em  var VERSION = 'v1';  (v2, v3...) para os telemóveis receberem a versão nova.
+    Se não o fizer, alguns telemóveis podem demorar a ver as alterações.
+  ÍCONES
+    img/icon-192.png, icon-512.png e icon-maskable-512.png foram feitos a partir de img/logo.jpg (240x240 px).
+    O de 512 px fica ligeiramente menos nítido; com o logótipo original em alta resolução (PNG, 1024x1024)
+    pode-se regenerar para ficar perfeito.
