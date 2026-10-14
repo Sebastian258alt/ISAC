@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal ISAC</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ff7100">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ISAC">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hd"><div class="hb">
+  <a class="brand" href="index.html"><img src="img/logo.jpg" alt="" width="46" height="46"><span><b>ISAC</b><small>Portal</small></span></a>
+  <div class="who"><span id="who"></span><button class="btn o2 sm" id="pwa-slot" type="button" hidden>Instalar app</button><a class="btn o2 sm" href="index.html">Voltar ao site</a></div>
+</div></header>
+<main class="w"><div id="v" aria-live="polite"></div></main>
+<footer class="ft"><div class="w"><b>ISAC · O futuro é agora</b></div></footer>
+<dialog id="dlg" aria-labelledby="dlgt"></dialog>
+<div id="toast" role="alert"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/portal.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
